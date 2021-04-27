@@ -1,0 +1,7 @@
+{
+    "Item": true,
+    "User": true,
+    "Invoice": true,
+    "Role": true,
+    "Dashboard": true
+}
