@@ -7,12 +7,11 @@
 @section('content')
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div>
-        <h4 class="mb-3 mb-md-0">Role</h4>
+        <h4 class="mb-3 mb-md-0">Dashboard</h4>
     </div>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('adm.index')}}">Beranda</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Role</li>
+            <li class="breadcrumb-item active" aria-current="page">Dahboard</li>
         </ol>
     </nav>
 </div>
@@ -27,16 +26,13 @@
 @endif
 
 <div class="row">
-    <div class="col-md-6 col-lg-4 mb-3 mb-md-0">
-        @livewire('role.create-or-edit')
-    </div>
-    <div class="col-md-6 col-lg-8">
+    <div class="col-12">
         <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between">
-                <h5>Daftar Role</h5>
+                <h5>Dahsboard</h5>
             </div>
             <div class="card-body">
-                @livewire('role.table')
+                <h4>Hello From Dashboard !</h4>
             </div>
         </div>
     </div>
@@ -51,7 +47,7 @@
 
 @push('custom-scripts')
 <script>
-    $(function() {
+$(function() {
     function initToast(text) {
         const Toast = Swal.mixin({
             toast: true,
