@@ -45,9 +45,9 @@
                 </a>
             </li>
 
-            <li class="nav-item {{ active_class('main.role.*') }}">
-                <a href="{{route('main.role.index')}}" class="nav-link">
-                    <i class="link-icon" data-feather="user-check"></i>
+            <li class="nav-item {{ active_class('main.invoice.*') }}">
+                <a href="{{route('main.invoice.index')}}" class="nav-link">
+                    <i class="link-icon" data-feather="file-text"></i>
                     <span class="link-title">Invoice</span>
                 </a>
             </li>

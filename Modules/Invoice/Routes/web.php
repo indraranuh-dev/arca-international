@@ -9,8 +9,12 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-Route::prefix('invoice')->group(function() {
-    Route::get('/', 'InvoiceController@index');
+Route::group([
+    'prefix' => '/invoice',
+    'middleware' => 'auth',
+    'as' => 'main.invoice.',
+], function () {
+    Route::get('/', 'InvoiceController@index')->name('index');
 });
