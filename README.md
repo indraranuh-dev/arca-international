@@ -1,6 +1,6 @@
 ## About This Test
 
-Disini saya Backend menggunakan Laravel v.8 dan Frontend menggunakan Livewire. Untuk template saya menggunakan NobleUI untuk mempercepat pengerjaan. Total waktu pengerjaan kurang lebih 7 jam dengan waktu yang efektif hingga project ini di upload ke github.
+Disini saya Backend menggunakan Laravel v.8 dan Frontend menggunakan Livewire. Untuk template saya menggunakan NobleUI untuk mempercepat pengerjaan.
 
 ## About Nwidart Modules
 
@@ -15,6 +15,7 @@ log into your <code>root</code> project, and run the following command at the <c
 -   cp .env.example .env
 -   php artisan key:generate
 -   php artisan migrate
+-   php artisan db:seed
 -   php artisan serve
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
