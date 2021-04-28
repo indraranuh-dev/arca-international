@@ -13,7 +13,7 @@
 
 Route::group([
     'prefix' => '/barang',
-    'middleware' => 'auth',
+    'middleware' => ['auth', 'role:admin'],
     'as' => 'main.item.',
 ], function () {
     Route::get('/', 'ItemController@index')->name('index');

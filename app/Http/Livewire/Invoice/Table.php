@@ -24,6 +24,11 @@ class Table extends Component
     public function getAll($keyword)
     {
         $invoice = Invoice::orderBy('created_at', 'desc');
+
+        if (auth()->user()->getRoleNames()->first() === 'user') {
+            $invoice->where('user_id', auth()->user()->id);
+        }
+
         return $invoice->simplePaginate(10);
     }
 

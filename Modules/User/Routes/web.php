@@ -13,7 +13,7 @@
 
 Route::group([
     'prefix' => '/user',
-    'middleware' => 'auth',
+    'middleware' => ['auth', 'role:admin'],
     'as' => 'main.user.',
 ], function () {
     Route::get('/', 'UserController@index')->name('index');

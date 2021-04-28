@@ -36,6 +36,7 @@
 
                         <livewire:invoice.item-table />
 
+                        @role('admin')
                         <div class="form-group">
                             <label for="">Status</label>
                             <div>
@@ -50,7 +51,7 @@
                                 @endforeach
                             </div>
                         </div>
-
+                        @endrole
                     </div>
 
                     <div class="modal-footer">

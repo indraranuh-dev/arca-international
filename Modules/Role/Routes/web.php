@@ -13,7 +13,7 @@
 
 Route::group([
     'prefix' => '/role',
-    'middleware' => 'auth',
+    'middleware' => ['auth', 'role:admin'],
     'as' => 'main.role.',
 ], function () {
     Route::get('/', 'RoleController@index')->name('index');

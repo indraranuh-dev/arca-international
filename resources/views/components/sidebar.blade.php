@@ -20,6 +20,7 @@
                 </a>
             </li>
 
+            @role('admin')
             <li class="nav-item nav-category">User Management</li>
 
             <li class="nav-item {{ active_class('main.user.*') }}">
@@ -35,15 +36,18 @@
                     <span class="link-title">Role</span>
                 </a>
             </li>
+            @endrole
 
             <li class="nav-item nav-category">Konten</li>
 
+            @role('admin')
             <li class="nav-item {{ active_class('main.item.*') }}">
                 <a href="{{route('main.item.index')}}" class="nav-link">
                     <i class="link-icon" data-feather="codepen"></i>
                     <span class="link-title">Barang</span>
                 </a>
             </li>
+            @endrole
 
             <li class="nav-item {{ active_class('main.invoice.*') }}">
                 <a href="{{route('main.invoice.index')}}" class="nav-link">
