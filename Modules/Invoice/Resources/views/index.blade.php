@@ -49,7 +49,7 @@
 @push('custom-scripts')
 <script>
     $(function() {
-    function initToast(text) {
+    function initToast(text, status) {
         const Toast = Swal.mixin({
             toast: true,
             position: 'top',
@@ -58,24 +58,29 @@
         });
 
         Toast.fire({
-            icon: 'success',
+            icon: status,
             title: text
         })
     }
 
     document.addEventListener('created', function(e) {
         $('#modal').modal('hide');
-        initToast(e.detail);
+        initToast(e.detail, 'success');
     })
 
     document.addEventListener('updated', function(e) {
         $('#modal').modal('hide');
-        initToast(e.detail);
+        initToast(e.detail, 'success');
     })
 
     document.addEventListener('deleted', function(e) {
         $('#deleteModal').modal('hide');
-        initToast(e.detail);
+        initToast(e.detail, 'success');
+    })
+
+    document.addEventListener('delete-failed', function(e) {
+        $('#deleteModal').modal('hide');
+        initToast(e.detail, 'error');
     })
 })
 </script>

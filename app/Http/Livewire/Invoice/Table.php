@@ -34,11 +34,17 @@ class Table extends Component
 
     public function destroy()
     {
-        $career = Invoice::findOrFail($this->deleteID);
-        $career->delete();
+        $invoice = Invoice::findOrFail($this->deleteID);
 
-        $this->dispatchBrowserEvent('deleted', 'Invoice berhasil dihapus !');
-        $this->reset('deleteID');
+        if ($invoice->status === 'pending') {
+            $invoice->delete();
+            $this->dispatchBrowserEvent('deleted', 'Invoice berhasil dihapus !');
+            $this->reset('deleteID');
+        } else {
+            $this->dispatchBrowserEvent('delete-failed', 'Invoice tidak dapat dihapus ! Invoice berstatus selain pending.');
+            $this->reset('deleteID');
+        }
+
     }
 
     public function render()
