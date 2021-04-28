@@ -18,4 +18,9 @@ class Invoice extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    public function details()
+    {
+        return $this->hasMany(InvoicesDetail::class, 'invoices_id', 'id');
+    }
 }

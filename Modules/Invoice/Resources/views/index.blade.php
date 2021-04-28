@@ -3,9 +3,9 @@
 @push('plugin-styles')
 <link href="{{ asset('assets/plugins/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" />
 <style>
-    table tr td {
-        vertical-align: top !important
-    }
+table tr td {
+    vertical-align: top !important
+}
 </style>
 @endpush
 
@@ -36,6 +36,7 @@
         @livewire('invoice.table')
     </div>
     @livewire('invoice.create-or-edit')
+    @livewire('invoice.preview')
 </div>
 
 @endsection
@@ -48,7 +49,7 @@
 
 @push('custom-scripts')
 <script>
-    $(function() {
+$(function() {
     function initToast(text, status) {
         const Toast = Swal.mixin({
             toast: true,

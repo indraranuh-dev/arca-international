@@ -35,7 +35,13 @@
                             @forelse ($invoices as $invoice)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$invoice->invoice_code}}</td>
+                                <td>
+                                    <button type="button" class="btn text-secondary btn-link px-2 py-1 font-sm"
+                                        data-toggle="modal" data-target="#preview" title="Edit"
+                                        wire:click="previewInvoice('{{$invoice->id}}')">
+                                        {{$invoice->invoice_code}}
+                                    </button>
+                                </td>
                                 <td>{{$invoice->user->name}}</td>
                                 <td>{{$invoice->created_at->format('D, d M Y')}}</td>
                                 <td class="text-capitalize">{{$invoice->status}}</td>

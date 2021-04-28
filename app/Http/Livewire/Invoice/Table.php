@@ -47,6 +47,11 @@ class Table extends Component
 
     }
 
+    public function previewInvoice($id)
+    {
+        $this->emitTo('invoice.preview', 'findInvoice', $id);
+    }
+
     public function render()
     {
         return view('livewire.invoice.table', [
